@@ -1,0 +1,27 @@
+Create ~/.bash_profile if not exists
+
+
+Highlight to Terminal
+export GREP_OPTIONS="--color=auto"
+export GREP_COLOR="4;33"
+export CLICOLOR="auto"
+
+
+Alias to Shortcuts
+alias ll="ls -a"
+alias ls="ls -G"
+
+
+Autocomplete to Git
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+
+Add Name in Current Branch 
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+

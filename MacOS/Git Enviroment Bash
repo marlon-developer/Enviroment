@@ -1,0 +1,52 @@
+Git Environment on Mac OS X
+
+
+brew install git bash-completion
+
+
+Configure Global Variables 
+
+git config --global user.name "Git User"
+git config --global user.email "email@example.com"
+
+
+Generate SSH key
+
+ssh-keygen
+
+
+Copy Key
+
+cat ~/.ssh/id_rsa.pub | pbcopy
+
+
+Configure Highlight
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = red
+
+
+Create a ~/.gitexcludes file and directory:
+.gitexcludes remove file global in localhost
+
+.DS_Store
+
+
+
+
+
