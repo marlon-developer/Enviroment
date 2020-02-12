@@ -1,0 +1,29 @@
+// Create DB
+CREATE DATABASE <db>;
+
+// Create User in MySQL 
+CREATE USER '<db>'@'<localhost>' IDENTIFIED WITH mysql_native_password BY '<password>';
+
+// Add Privileges to User
+GRANT ALL PRIVILEGES ON <db>.* TO '<db>'@'<localhost>';
+
+// Update the Grant Tables
+FLUSH PRIVILEGES;
+
+// Change Password to User
+SET PASSWORD FOR <user> = PASSWORD('<newPassword>');
+
+// Remove All the Permissions to Base <db> and to user <user>
+REVOKE ALL ON <user>.* FROM <db>;
+
+// Drop User
+//MySQL New
+DROP USER
+
+//MySQL Old
+DELETE FROM mysql.<user> WHERE User='<user>'
+
+
+
+
+
